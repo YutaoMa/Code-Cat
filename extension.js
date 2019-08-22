@@ -61,7 +61,7 @@ function init() {
 }
 
 function initPanel() {
-	panel = vscode.window.createWebviewPanel('codecat', 'Code? Cat!', vscode.ViewColumn.Beside, {});
+	panel = vscode.window.createWebviewPanel('codecat', 'Code? Cat!', { viewColumn: vscode.ViewColumn.Beside, preserveFocus: true });
 	panel.onDidDispose(() => { panel = null; });
 	panel.webview.html = `
 		<!DOCTYPE html>
@@ -112,9 +112,16 @@ function updateWebview() {
 				</body>
 			</html>
 			`;
-			panel.reveal();
+			if (!panel.visible) {
+				vscode.window.showInformationMessage("MEOW!", "View", "Bye")
+					.then((option) => {
+						if (option === "View") {
+							panel.reveal(vscode.ViewColumn.Beside, true);
+						}
+					});
+			}
 		})
-		.catch(console.log);
+		.catch(console.error);
 }
 
 function onDidChangeTextDocument() {

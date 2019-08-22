@@ -15,3 +15,9 @@
 ### Fixed
 
 - Cat image size issue
+
+## 1.0.2 - 22 August 2019
+
+### Added
+
+- MEOW! Notification when cat panel is inactive

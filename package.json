@@ -2,7 +2,7 @@
 	"name": "code-cat",
 	"displayName": "Code? Cat!",
 	"description": "A VS Code cat displayer inspired by Written Kitten",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"publisher": "YtMa-Publisher",
 	"repository": {
 		"type": "git",

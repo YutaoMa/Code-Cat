@@ -10,16 +10,20 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"*"
 	],
 	"main": "./extension.js",
 	"contributes": {
-		"commands": [
-			{
-				"command": "extension.helloWorld",
-				"title": "Hello World"
+		"configuration": {
+			"title": "Code? Cat!",
+			"properties": {
+				"codecat.enabled": {
+					"default": false,
+					"type": "boolean",
+					"description": "Enable to activate Code Cat!"
+				}
 			}
-		]
+		}
 	},
 	"scripts": {
 		"test": "node ./test/runTest.js"
@@ -34,5 +38,8 @@
 		"mocha": "^6.1.4",
 		"typescript": "^3.3.1",
 		"vscode-test": "^1.0.2"
+	},
+	"dependencies": {
+		"axios": "^0.19.0"
 	}
 }

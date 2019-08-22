@@ -3,6 +3,12 @@
 	"displayName": "Code? Cat!",
 	"description": "A VS Code cat displayer inspired by Written Kitten",
 	"version": "1.0.0",
+	"publisher": "YtMa-Publisher",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/YutaoMa/Code-Cat.git"
+	},
+	"icon": "icon.png",
 	"engines": {
 		"vscode": "^1.37.0"
 	},
@@ -21,6 +27,26 @@
 					"default": false,
 					"type": "boolean",
 					"description": "Enable to activate Code Cat!"
+				},
+				"codecat.mode": {
+					"default": "Count",
+					"description": "Choose when a new cat is shown",
+					"type": "string",
+					"enum": ["Count", "Time"],
+					"enumDescriptions": [
+						"Triggers a new cat pic after a number of editings done",
+						"Triggers a new cat pic after a certain amount of time"
+					]
+				},
+				"codecat.countThreshold": {
+					"default": 200,
+					"type": "number",
+					"description": "Amount of editings to trigger a new cat"
+				},
+				"codecat.timeThreshold": {
+					"default": 30,
+					"type": "number",
+					"description": "Minutes taken to get a new cat"
 				}
 			}
 		}

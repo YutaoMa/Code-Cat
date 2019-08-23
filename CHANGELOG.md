@@ -21,3 +21,9 @@
 ### Added
 
 - MEOW! Notification when cat panel is inactive
+
+## 1.0.3 - 22 August 2019
+
+### Added
+
+- Cat now in your status bar also

@@ -9,6 +9,7 @@ let count = 0;
 let countThreshold = 200;
 let timeThreshold = 30;
 let timer = null;
+let statusBarCat = null;
 
 function activate() {
 	vscode.workspace.onDidChangeConfiguration(onDidChangeConfiguration);
@@ -30,6 +31,11 @@ function deactivate() {
 	if (timer) {
 		clearInterval(timer);
 		timer = null;
+	}
+
+	if (statusBarCat) {
+		statusBarCat.dispose();
+		statusBarCat = null;
 	}
 }
 
@@ -58,6 +64,9 @@ function init() {
 			onTimer();
 		}, timeThreshold * 60 * 1000);
 	}
+	statusBarCat = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 0);
+	statusBarCat.text = "/ᐠ｡ꞈ｡ᐟ\\ coding... cating...";
+	statusBarCat.show();
 }
 
 function initPanel() {
